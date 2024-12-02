@@ -16,7 +16,7 @@ let counter lst =
       | Some cnt -> cnt + 1))
 ;;
 
-let part_1 ic =
+let part1 ic =
   let rec helper ic =
     match input_line ic with
     | None -> [], []
@@ -37,7 +37,7 @@ let part_1 ic =
   List.reduce (diffs lst1 lst2) ~f:( + ) |> Option.value ~default:0
 ;;
 
-let part_2 ic =
+let part2 ic =
   let rec helper ic =
     match input_line ic with
     | None -> [], []
@@ -59,6 +59,6 @@ let part_2 ic =
 let () =
   let ic1 = create file in
   let ic2 = create file in
-  part_1 ic1 |> Int.to_string |> print_endline;
-  part_2 ic2 |> Int.to_string |> print_endline
+  part1 ic1 |> Int.to_string |> print_endline;
+  part2 ic2 |> Int.to_string |> print_endline
 ;;
